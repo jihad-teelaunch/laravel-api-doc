@@ -1,0 +1,351 @@
+{
+  "variable": [
+    {
+      "id": "baseUrl",
+      "key": "baseUrl",
+      "type": "string",
+      "name": "string",
+      "value": "http://localhost"
+    }
+  ],
+  "info": {
+    "name": "GREAT API!",
+    "_postman_id": "",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "3.9.9"
+  },
+  "item": [
+    {
+      "name": "Group A",
+      "description": "",
+      "item": [
+        {
+          "name": "Endpoint with body parameters as array.",
+          "request": {
+            "url": {
+              "host": "{{baseUrl}}",
+              "path": "api/withBodyParametersAsArray",
+              "query": [],
+              "raw": "{{baseUrl}}/api/withBodyParametersAsArray"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Custom-Header",
+                "value": "NotSoCustom"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[{\"first_name\":\"John\",\"last_name\":\"Doe\",\"contacts\":[{\"first_name\":\"Janelle\",\"last_name\":\"Monáe\"}],\"roles\":[\"Admin\"]}]"
+            },
+            "description": "",
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Endpoint with body form data parameters.",
+          "request": {
+            "url": {
+              "host": "{{baseUrl}}",
+              "path": "api/withFormDataParams",
+              "query": [],
+              "raw": "{{baseUrl}}/api/withFormDataParams"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Custom-Header",
+                "value": "NotSoCustom"
+              },
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "cat.jpg",
+                  "type": "text",
+                  "description": "Name of image."
+                },
+                {
+                  "key": "image",
+                  "src": [],
+                  "type": "file"
+                }
+              ]
+            },
+            "description": "",
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Endpoint with body parameters.",
+          "request": {
+            "url": {
+              "host": "{{baseUrl}}",
+              "path": "api/withBodyParameters",
+              "query": [],
+              "raw": "{{baseUrl}}/api/withBodyParameters"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Custom-Header",
+                "value": "NotSoCustom"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"user_id\":9,\"room_id\":\"consequatur\",\"forever\":false,\"another_one\":11613.31890586,\"yet_another_param\":{\"name\":\"consequatur\"},\"even_more_param\":[11613.31890586],\"book\":{\"name\":\"consequatur\",\"author_id\":17,\"pages_count\":17},\"ids\":[17],\"users\":[{\"first_name\":\"John\",\"last_name\":\"Doe\"}]}"
+            },
+            "description": "",
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET api/withQueryParameters",
+          "request": {
+            "url": {
+              "host": "{{baseUrl}}",
+              "path": "api/withQueryParameters",
+              "query": [
+                {
+                  "key": "location_id",
+                  "value": "consequatur",
+                  "description": "The id of the location.",
+                  "disabled": false
+                },
+                {
+                  "key": "user_id",
+                  "value": "me",
+                  "description": "The id of the user.",
+                  "disabled": false
+                },
+                {
+                  "key": "page",
+                  "value": "4",
+                  "description": "The page number.",
+                  "disabled": false
+                },
+                {
+                  "key": "filters",
+                  "value": "consequatur",
+                  "description": "The filters.",
+                  "disabled": false
+                },
+                {
+                  "key": "url_encoded",
+                  "value": "%2B+%5B%5D%26%3D",
+                  "description": "Used for testing that URL parameters will be URL-encoded where needed.",
+                  "disabled": false
+                }
+              ],
+              "raw": "{{baseUrl}}/api/withQueryParameters?location_id=consequatur&user_id=me&page=4&filters=consequatur&url_encoded=%2B+%5B%5D%26%3D"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Custom-Header",
+                "value": "NotSoCustom"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": null,
+            "description": "",
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "response": [
+            {
+              "header": [
+                {
+                  "key": "content-type",
+                  "value": "text/html; charset=UTF-8"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, private"
+                }
+              ],
+              "code": 200,
+              "body": "",
+              "name": null
+            }
+          ]
+        },
+        {
+          "name": "GET api/withAuthTag",
+          "request": {
+            "url": {
+              "host": "{{baseUrl}}",
+              "path": "api/withAuthTag",
+              "query": [],
+              "raw": "{{baseUrl}}/api/withAuthTag"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Custom-Header",
+                "value": "NotSoCustom"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": null,
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [
+                {
+                  "key": "content-type",
+                  "value": "text/html; charset=UTF-8"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, private"
+                }
+              ],
+              "code": 200,
+              "body": "",
+              "name": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Other\ud83d\ude0e",
+      "description": "",
+      "item": [
+        {
+          "name": "GET api/echoesUrlParameters/{param}/{param2}/{param3?}/{param4?}",
+          "request": {
+            "url": {
+              "host": "{{baseUrl}}",
+              "path": "api/echoesUrlParameters/:param/:param2/:param3/:param4",
+              "query": [
+                {
+                  "key": "something",
+                  "value": "consequatur",
+                  "description": "",
+                  "disabled": false
+                }
+              ],
+              "raw": "{{baseUrl}}/api/echoesUrlParameters/:param/:param2/:param3/:param4?something=consequatur",
+              "variable": [
+                {
+                  "id": "param",
+                  "key": "param",
+                  "value": "4",
+                  "description": ""
+                },
+                {
+                  "id": "param2",
+                  "key": "param2",
+                  "value": "consequatur",
+                  "description": ""
+                },
+                {
+                  "id": "param3",
+                  "key": "param3",
+                  "value": "consequatur",
+                  "description": ""
+                },
+                {
+                  "id": "param4",
+                  "key": "param4",
+                  "value": null,
+                  "description": ""
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Custom-Header",
+                "value": "NotSoCustom"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": null,
+            "description": "",
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "response": [
+            {
+              "header": [
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                }
+              ],
+              "code": 200,
+              "body": "{\"param\":\"4\",\"param2\":\"consequatur\",\"param3\":\"consequatur\",\"param4\":null}",
+              "name": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "key",
+        "type": "string"
+      }
+    ]
+  }
+}

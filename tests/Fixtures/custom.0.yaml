@@ -1,0 +1,82 @@
+- httpMethods:
+    - POST
+  uri: userDefined/yeah
+  metadata:
+    groupName: '1. Group 1'
+    title: 'User defined'
+    description: 'This endpoint allows you to do something.'
+    authenticated: false
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+  urlParameters: {}
+  queryParameters:
+    speed:
+      name: speed
+      description: How fast the thing should be done. Can be `slow` or `fast`.
+      required: false
+      example: fast
+      type: string
+  bodyParameters:
+    something:
+      name: something
+      description: The things we should do.
+      required: true
+      example:
+        - string 1
+        - string 2
+      type: 'string[]'
+  responses:
+    - status: 200
+      description: 'When the thing was done smoothly.'
+      content:
+         hey: "ho ho ho"
+  responseFields:
+    hey:
+      name: hey
+      description: Who knows?
+      type: string
+
+- httpMethods:
+    - GET
+  uri: group5
+  metadata:
+    groupName: '5. Group 5'
+    title:
+    description:
+    authenticated: false
+  headers: {}
+  urlParameters: {}
+  queryParameters: {}
+  bodyParameters: {}
+  responses: {}
+  responseFields: {}
+- httpMethods:
+    - GET
+  uri: group4
+  metadata:
+    groupName: '4. Group 4'
+    title:
+    description:
+    authenticated: false
+  headers: {}
+  urlParameters: {}
+  queryParameters: {}
+  bodyParameters: {}
+  responses: {}
+  responseFields: {}
+
+- httpMethods:
+    - GET
+  uri: alsoGroup5
+  metadata:
+    groupName: '5. Group 5'
+    title:
+    description:
+    authenticated: false
+  headers: {}
+  urlParameters: {}
+  queryParameters: {}
+  bodyParameters: {}
+  responses: {}
+  responseFields: {}

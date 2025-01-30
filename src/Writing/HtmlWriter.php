@@ -195,10 +195,12 @@ class HtmlWriter
                 'slug' => $groupSlug,
                 'name' => $group['name'],
                 'subheadings' => collect($group['subgroups'])->flatMap(function ($endpoints, $subgroupName) use ($groupSlug) {
+
                     if ($subgroupName === "") {
                         return $endpoints->map(fn(OutputEndpointData $endpoint) => [
                             'slug' => $endpoint->fullSlug(),
                             'name' => $endpoint->name(),
+                            'method' => $endpoint->httpMethods[0],
                             'subheadings' => []
                         ])->values();
                     }
@@ -210,6 +212,7 @@ class HtmlWriter
                             'subheadings' => $endpoints->map(fn($endpoint) => [
                                 'slug' => $endpoint->fullSlug(),
                                 'name' => $endpoint->name(),
+                                'method' => $endpoint->httpMethods[0],
                                 'subheadings' => []
                             ])->values(),
                         ],
@@ -235,4 +238,5 @@ class HtmlWriter
 
         return $headings;
     }
+
 }

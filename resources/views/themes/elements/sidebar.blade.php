@@ -84,9 +84,5 @@
         <div class="sl-flex sl-items-center sl-px-4 sl-py-3 sl-border-t">
             {{ $metadata['last_updated'] }}
         </div>
-
-        <div class="sl-flex sl-items-center sl-px-4 sl-py-3 sl-border-t">
-            <a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a>
-        </div>
     </div>
 </div>

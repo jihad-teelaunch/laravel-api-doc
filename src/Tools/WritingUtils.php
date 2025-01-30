@@ -8,9 +8,9 @@ use Symfony\Component\VarExporter\VarExporter;
 class WritingUtils
 {
     public static array $httpMethodToCssColour = [
-        'GET' => 'bleu',
+        'GET' => 'darkgreen',
         'HEAD' => 'darkgreen',
-        'POST' => 'green',
+        'POST' => '#186FAC',
         'PUT' => 'darkorange',
         'PATCH' => 'purple',
         'DELETE' => 'red',

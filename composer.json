@@ -1,5 +1,5 @@
 {
-    "name": "knuckleswtf/scribe",
+    "name": "jihad-teelaunch/laravel-api-doc",
     "license": "MIT",
     "description": "Generate API documentation for humans from your Laravel codebase.✍",
     "keywords": [
@@ -8,10 +8,9 @@
         "laravel",
         "dingo"
     ],
-    "homepage": "http://github.com/knuckleswtf/scribe",
     "authors": [
         {
-            "name": "Shalvah"
+            "name": "JihadKahil"
         }
     ],
     "require": {

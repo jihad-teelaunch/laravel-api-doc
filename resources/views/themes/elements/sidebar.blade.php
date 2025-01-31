@@ -1,4 +1,5 @@
-<div id="sidebar" class="sl-flex sl-overflow-y-auto sl-flex-col sl-sticky sl-inset-y-0 sl-pt-8 sl-bg-canvas-100 sl-border-r"
+<div id="sidebar"
+     class="sl-flex sl-overflow-y-auto sl-flex-col sl-sticky sl-inset-y-0 sl-pt-8 sl-bg-canvas-100 sl-border-r"
      style="width: calc((100% - 1800px) / 2 + 300px); padding-left: calc((100% - 1800px) / 2); min-width: 300px; max-height: 100vh">
     <div class="sl-flex sl-items-center sl-mb-5 sl-ml-4">
         @if($metadata['logo'] != false)
@@ -38,13 +39,24 @@
                             <div class="children" style="display: none;">
                                 @foreach($h1['subheadings'] as $h2)
                                     <div class="expandable">
-                                        <div class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-8 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"
-                                             id="toc-item-{!! $h2['slug'] !!}">
-                                            <div class="sl-flex-1 sl-items-center sl-truncate sl-mr-1.5 sl-p-0" title="{!! $h2['name'] !!}">
-                                                <a class="ElementsTableOfContentsItem sl-block sl-no-underline"
-                                                   href="#{!! $h2['slug'] !!}">
+                                        <div
+                                                onclick="window.location.href='#{!! $h2['slug'] !!}'"
+                                                class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-8 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"
+                                                id="toc-item-{!! $h2['slug'] !!}">
+                                            <div class="sl-flex-1 sl-items-center sl-truncate sl-mr-1.5 sl-p-0"
+                                                 style="display: flex"
+                                                 title="{!! $h2['name'] !!}">
+                                                @if(isset($h2['method']))
+                                                    <div
+
+                                                            class="sl-font-prose sl-font-semibold sl-px-1.5 sl-py-0.5 sl-text-on-primary sl-rounded-lg sl-mr-2"
+                                                            style="background-color: {{\Knuckles\Scribe\Tools\WritingUtils::$httpMethodToCssColour[$h2['method']]}}; font-size: 10px">
+                                                        {{$h2['method']}}
+                                                    </div>
+                                                @endif
+                                                <div class="ElementsTableOfContentsItem sl-block sl-no-underline">
                                                     {!! $h2['name'] !!}
-                                                </a>
+                                                </div>
                                             </div>
                                             @if(count($h2['subheadings']) > 0)
                                                 <div class="sl-flex sl-items-center sl-text-xs expansion-chevrons">
@@ -62,13 +74,22 @@
                                         @if(count($h2['subheadings']) > 0)
                                             <div class="children" style="display: none;">
                                                 @foreach($h2['subheadings'] as $h3)
-                                                    <a class="ElementsTableOfContentsItem sl-block sl-no-underline"
-                                                       href="#{!! $h3['slug'] !!}">
-                                                        <div title="{!! $h3['name'] !!}" id="toc-item-{!! $h3['slug'] !!}"
-                                                             class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-12 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none">
+                                                    <div style="display: flex"
+                                                         class="ElementsTableOfContentsItem sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-12 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"
+                                                         onclick="window.location.href='#{!! $h3['slug'] !!}'">
+                                                        @if(isset($h3['method']))
+                                                            <div title="{!! $h3['name'] !!}"
+                                                                 class="sl-font-prose sl-font-semibold sl-px-1.5 sl-py-0.5 sl-text-on-primary sl-rounded-lg sl-mr-2"
+                                                                 style="background-color: {{\Knuckles\Scribe\Tools\WritingUtils::$httpMethodToCssColour[$h3['method']]}}; font-size: 10px"
+                                                                 id="toc-item-{!! $h3['slug'] !!}">{!! $h3['method'] !!}
+                                                            </div>
+                                                        @endif
+                                                        <div title="{!! $h3['name'] !!}"
+                                                             id="toc-item-{!! $h3['slug'] !!}"
+                                                             class="sl-flex sl-items-center">
                                                             {!! $h3['name'] !!}
                                                         </div>
-                                                    </a>
+                                                    </div>
                                                 @endforeach
                                             </div>
                                         @endif

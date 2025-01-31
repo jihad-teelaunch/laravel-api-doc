@@ -281,7 +281,7 @@
 
     @include("scribe::themes.elements.sidebar")
 
-    <div class="sl-overflow-y-auto sl-flex-1 sl-w-full sl-px-16 sl-bg-canvas sl-py-16" style="max-width: 1500px;">
+    <div class="sl-overflow-y-auto sl-flex-1 sl-w-full sl-px-16 sl-bg-canvas sl-py-16" id="main-doc" style="max-width: 1500px;">
 
         <div class="sl-mb-10">
             <div class="sl-mb-4">

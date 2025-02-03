@@ -107,7 +107,7 @@
 
         </div>
         <div class="sl-flex sl-items-center sl-px-4 sl-py-3 sl-border-t">
-            <img src="./../../../images/postman.svg" alt="postman">
+            <img height="25" width="25" src="./images/postman.svg" alt="postman">
             @if($metadata['postman_collection_url'])
                 <a title="Download Postman collection" class="sl-mx-1"
                    href="{!! $metadata['postman_collection_url'] !!}" target="_blank">

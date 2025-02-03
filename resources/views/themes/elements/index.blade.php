@@ -288,18 +288,6 @@
                 <h1 class="sl-text-5xl sl-leading-tight sl-font-prose sl-font-semibold sl-text-heading">
                     {!! $metadata['title'] !!}
                 </h1>
-                @if($metadata['postman_collection_url'])
-                    <a title="Download Postman collection" class="sl-mx-1"
-                       href="{!! $metadata['postman_collection_url'] !!}" target="_blank">
-                        <small>Postman collection →</small>
-                    </a>
-                @endif
-                @if($metadata['openapi_spec_url'])
-                    <a title="Download OpenAPI spec" class="sl-mx-1"
-                       href="{!! $metadata['openapi_spec_url'] !!}" target="_blank">
-                        <small>OpenAPI spec →</small>
-                    </a>
-                @endif
             </div>
 
             <div class="sl-prose sl-markdown-viewer sl-my-4">
